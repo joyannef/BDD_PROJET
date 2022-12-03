@@ -53,11 +53,12 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/etablissements.csv'
 
 connect.commit()
 
+
+#final commit of all commands and print
 all = cursor.fetchall()
 for item in all:
     print (item)
 
-#final commit of all commands and print
 connect.commit()
 
 connect.close()
