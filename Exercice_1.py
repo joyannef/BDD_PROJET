@@ -41,7 +41,7 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/carte.csv', 'rt') a
         Prix = row[3]
         Degre = row[4]
         Quantite = row [5]
-        cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)," (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
+        cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/employes.csv', 'rt') as employes_path:
     emp_csv = csv.reader(employes_path, delimiter="\t")
