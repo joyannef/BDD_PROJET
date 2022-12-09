@@ -1,13 +1,12 @@
 import sqlite3
 import csv
-from csv import DictReader
 
 #connect to the database
 connect = sqlite3.connect('BARStesting.db')
 cursor = connect.cursor()
 
 #creating the tables for the data
-cursor.execute("""CREATE TABLE carte (id_Boisson INTEGER PRIMARY KEY,
+cursor.execute("""CREATE TABLE carte (id_Boisson PRIMARY KEY,
                                     nom TEXT NON NULL,
                                     type TEXT NON NULL,
                                     prix REAL NON NULL,
@@ -20,10 +19,11 @@ cursor.execute("""CREATE TABLE employes (matricule TEXT PRIMARY KEY,
                                     profession TEXT NON NULL,
                                     nom_bar TEXT NON NULL)""")
 
-cursor.execute("""CREATE TABLE etablissements (manager_id TEXT PRIMARY KEY,
+cursor.execute("""CREATE TABLE etablissements (
                                     name TEXT NON NULL,
                                     adresse TEXT NON NULL,
-                                    num_Tel INTEGER NON NULL)""")
+                                    num_Tel INTEGER NON NULL,
+                                    manager_id TEXT NON NULL)""")
 
 cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMENT,
                                     employe_id TEXT,
@@ -62,13 +62,12 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/etablissements.csv'
         Name = row[1]
         Adresse = row [2]
         Num_Tel = row[3]
-        cursor.execute("INSERT INTO etablissements (manager_id, name, adresse, num_Tel) VALUES (?,?,?,?)", (Manager_id, Name, Adresse, Num_Tel))
+        cursor.execute("INSERT INTO etablissements (name, adresse, num_Tel, manager_id) VALUES (?,?,?,?)", (Name, Adresse, Num_Tel, Manager_id))
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/ventes.csv', 'rt') as vente_path:
     vente_csv = csv.reader(vente_path, delimiter="\t")
     for row in vente_csv:
         print (row)
-        # no_vente = row [0]
         Employe_Id = row[0]
         Boisson_Id = row[1]
         Date = row[2]
