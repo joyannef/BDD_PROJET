@@ -5,12 +5,13 @@ import csv
 connect = sqlite3.connect('/Users/jfoster/Documents/PluriTAL/BDD/test/bars.db')
 cursor = connect.cursor()
 
-# Les statistiques globale du groupe
+#Les statistiques globale du groupe
 nombre_bars = cursor.execute("SELECT COUNT (name) FROM etablissements")
 res1 = cursor.fetchall()
 for item in res1:
     print(f"Nombre de bars = {item}")
 
+#Donc le nombre d'employés sans les managers inclus 
 nombre_employes = cursor.execute("SELECT COUNT (matricule) FROM employes WHERE profession != 'Manager' ")
 res2 = cursor.fetchall()
 for item in res2:
