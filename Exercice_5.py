@@ -17,7 +17,7 @@ for item in droits_utilisateurs:
 for i in a:
     b.append(i[0])
 
-#Les matricules dans b sont des matricules des managers
+#Pour verifier que les élements dans b sont des matricules des managers
 print (b)
 
 # Accès aux ventes effectuées dans son bar étant donné que la matricule est celle d'un manager
