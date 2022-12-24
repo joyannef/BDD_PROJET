@@ -7,24 +7,24 @@ cursor = connect.cursor()
 
 #creating the tables for the data
 cursor.execute("""CREATE TABLE carte (id_Boisson INTEGER,
-                                    nom TEXT NON NULL,
-                                    type TEXT NON NULL,
-                                    prix REAL NON NULL,
+                                    nom TEXT NOT NULL,
+                                    type TEXT NOT NULL,
+                                    prix REAL NOT NULL,
                                     degre REAL NULL,
                                     quantite REAL)""")
 
 cursor.execute("""CREATE TABLE employes (
-                                    prenom TEXT NON NULL,
-                                    nom TEXT NON NULL,
+                                    prenom TEXT NOT NULL,
+                                    nom TEXT NOT NULL,
                                     matricule TEXT PRIMARY KEY,
-                                    profession TEXT NON NULL,
-                                    nom_bar TEXT NON NULL)""")
+                                    profession TEXT NOT NULL,
+                                    nom_bar TEXT NOT NULL)""")
 
 cursor.execute("""CREATE TABLE etablissements (
-                                    name TEXT NON NULL,
-                                    adresse TEXT NON NULL,
-                                    num_Tel INTEGER NON NULL,
-                                    manager_id TEXT NON NULL,
+                                    name TEXT NOT NULL,
+                                    adresse TEXT NOT NULL,
+                                    num_Tel INTEGER NOT NULL,
+                                    manager_id TEXT NOT NULL,
                                     FOREIGN KEY (manager_id) REFERENCES employes (matricule));""")
 
 cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMENT,
