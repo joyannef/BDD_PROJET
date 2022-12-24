@@ -58,8 +58,8 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/employes.csv', 'rt'
         Nom_Bar = row[4]
         cursor.execute ("INSERT INTO employes (prenom, nom, matricule, profession, nom_bar) VALUES (?, ?, ?, ?, ?)", (Prenom, Nom, Matricule, Profession, Nom_Bar))
 
-del_emp = "DELETE FROM employes WHERE rowid IN (SELECT rowid FROM employes LIMIT 1);"
-cursor.execute(del_emp)
+delete = "DELETE FROM employes WHERE prenom = 'Prenom' "
+cursor.execute(delete)
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/etablissements.csv', 'rt') as etab_path:
     etab_csv = csv.reader(etab_path, delimiter="\t")
