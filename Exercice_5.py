@@ -25,7 +25,7 @@ in_b = True
 while in_b:
     find_matricule = input("Entrer votre matricule: ")
     if find_matricule in b:
-        print ("Vous avez l'accès aux informations suivantes...")
+        print ("Vous avez l'accès aux informations suivantes...\n('Nom_du_Bar','Prenom', 'Nom', 'Matricule', 'Total_Ventes')\n")
         if find_matricule == "T80612":
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
@@ -124,5 +124,4 @@ while in_b:
 connect.commit()
 
 connect.close()
-
 
