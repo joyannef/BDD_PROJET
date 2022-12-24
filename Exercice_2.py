@@ -9,7 +9,7 @@ cursor = connect.cursor()
 nombre_bars = cursor.execute("SELECT COUNT (name) FROM etablissements")
 res1 = cursor.fetchall()
 for item in res1:
-    print(f"Nombre de bars = {item}")
+    print(f"Nombre de Bars = {item}")
 
 #Donc le nombre d'employés sans les managers inclus 
 nombre_employes = cursor.execute("SELECT COUNT (matricule) FROM employes WHERE profession != 'Manager' ")
