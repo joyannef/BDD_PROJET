@@ -9,17 +9,17 @@ cursor = connect.cursor()
 nombre_bars = cursor.execute("SELECT COUNT (name) FROM etablissements")
 res1 = cursor.fetchall()
 for item in res1:
-    print(item)
+    print(f"Nombre de bars = {item}")
 
 nombre_employes = cursor.execute("SELECT COUNT (matricule) FROM employes WHERE profession != 'Manager' ")
 res2 = cursor.fetchall()
 for item in res2:
-    print(item)
+    print(f"Nombre d'Employés = {item}")
 
 managers = cursor.execute("SELECT COUNT (matricule) FROM employes WHERE profession = 'Manager' ")
 res3 = cursor.fetchall()
 for item in res3:
-    print(item)
+    print(f"Nombre de Managers = {item}")
 
 emp_par_profession = cursor.execute("SELECT profession, COUNT (matricule) FROM employes GROUP BY profession")
 res4= cursor.fetchall()
