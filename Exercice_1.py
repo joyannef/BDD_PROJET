@@ -6,12 +6,12 @@ connect = sqlite3.connect('bars.db')
 cursor = connect.cursor()
 
 #creating the tables for the data
-cursor.execute("""CREATE TABLE carte (id_Boisson INTEGER,
+cursor.execute("""CREATE TABLE carte (id_Boisson PRIMARY KEY,
                                     nom_Boisson TEXT NOT NULL,
                                     type TEXT NOT NULL,
                                     prix REAL NOT NULL,
                                     degre REAL,
-                                    quantite REAL)""")
+                                    quantite REAL NOT NULL);""")
 
 cursor.execute("""CREATE TABLE employes (
                                     prenom TEXT NOT NULL,
@@ -46,9 +46,9 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/carte.csv', 'rt') a
         Prix = row[3]
         Degre = row[4]
         Quantite = row [5]
-        cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
+        cursor.execute("INSERT INTO carte (id_Boisson, nom_Boisson, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
 
-del_c = "DELETE FROM carte WHERE Nom = 'Nom' "
+del_c = "DELETE FROM carte WHERE id_Boisson = 'Id_Boisson' "
 cursor.execute(del_c)
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/employes.csv', 'rt') as employes_path:
@@ -85,7 +85,6 @@ with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/ventes.csv', 'rt') 
         Employe_Id = row[0]
         Boisson_Id = row[1]
         Date = row[2]
-        cursor.execute("INSERT INTO ventes (no_vente) VALUES (0)")
         cursor.execute ("INSERT INTO ventes (employe_id, boisson_id, date) VALUES (?, ?, ?)", (Employe_Id, Boisson_Id, Date))
 
 del_vente = "DELETE FROM ventes WHERE rowid IN (SELECT rowid FROM ventes LIMIT 1);"
