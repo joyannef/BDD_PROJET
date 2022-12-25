@@ -35,17 +35,17 @@ cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMEN
                                     FOREIGN KEY (employe_id) REFERENCES employes (matricule));""")
 
 #paths
-# with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/carte.csv', 'rt') as carte_path:
-#     carte_csv= csv.reader(carte_path, sep = "\t|\t\t")
-#     for row in carte_csv:
-#         print(row)
-            # Id_Boisson = row[0]
-            # Nom = row[1]
-            # Type = row[2]
-            # Prix = row[3]
-            # Degre = row[4]
-            # Quantite = row [5]
-            # cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
+with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/carte.csv', 'rt') as carte_path:
+     carte_csv= csv.reader(carte_path, sep = "\t|\t\t")
+     for row in carte_csv:
+         print(row)
+         Id_Boisson = row[0]
+         Nom = row[1]
+         Type = row[2]
+         Prix = row[3]
+         Degre = row[4]
+         Quantite = row [5]
+         cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/employes.csv', 'rt') as employes_path:
     emp_csv = csv.reader(employes_path, delimiter="\t")
@@ -77,11 +77,11 @@ cursor.execute(del_etab)
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/ventes.csv', 'rt') as vente_path:
     vente_csv = csv.reader(vente_path, delimiter="\t")
     for row in vente_csv:
-        # print (row)
+        print (row)
         Employe_Id = row[0]
         Boisson_Id = row[1]
         Date = row[2]
-        # cursor.execute("INSERT INTO ventes (no_vente) VALUES (0)")
+        cursor.execute("INSERT INTO ventes (no_vente) VALUES (0)")
         cursor.execute ("INSERT INTO ventes (employe_id, boisson_id, date) VALUES (?, ?, ?)", (Employe_Id, Boisson_Id, Date))
 
 del_vente = "DELETE FROM ventes WHERE rowid IN (SELECT rowid FROM ventes LIMIT 1);"
