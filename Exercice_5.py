@@ -120,7 +120,6 @@ while in_b:
         print ("ERREUR. Vous n'avez pas d'accès à ces informations...")
         break
 
-##FAUT AJOUTER INFO DES VENTES
 connect.commit()
 
 connect.close()
