@@ -21,13 +21,14 @@ cursor.execute("""CREATE TABLE employes (
                                     nom_bar TEXT NOT NULL)""")
 
 cursor.execute("""CREATE TABLE etablissements (
+                                    id_etablissement INTEGER PRIMARY KEY AUTOINCREMENT,
                                     name TEXT NOT NULL,
                                     adresse TEXT NOT NULL,
                                     num_Tel INTEGER NOT NULL,
                                     manager_id TEXT NOT NULL,
                                     FOREIGN KEY (manager_id) REFERENCES employes (matricule));""")
 
-cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMENT,
+cursor.execute("""CREATE TABLE ventes (id_vente INTEGER PRIMARY KEY AUTOINCREMENT,
                                     employe_id TEXT,
                                     boisson_id INTEGER, 
                                     date TEXT,
