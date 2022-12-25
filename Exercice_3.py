@@ -21,8 +21,7 @@ montant_total_emp = cursor.execute(""" SELECT prenom, nom, employe_id, ROUND(S, 
                                               FROM ventes, carte, employes
                                               WHERE ventes.boisson_id = carte.id_Boisson AND ventes.employe_id = employes.matricule
                                               GROUP BY employe_id)
-                                              ORDER BY S DESC
-                                             """)
+                                              ORDER BY S DESC""")
 res = cursor.fetchall()
 for item in res:
     print(item)
