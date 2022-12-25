@@ -10,7 +10,7 @@ cursor.execute("""CREATE TABLE carte (id_Boisson INTEGER,
                                     nom TEXT NOT NULL,
                                     type TEXT NOT NULL,
                                     prix REAL NOT NULL,
-                                    degre REAL NULL,
+                                    degre REAL,
                                     quantite REAL)""")
 
 cursor.execute("""CREATE TABLE employes (
@@ -36,16 +36,19 @@ cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMEN
 
 #paths
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/carte.csv', 'rt') as carte_path:
-     carte_csv= csv.reader(carte_path, sep = "\t|\t\t")
-     for row in carte_csv:
-         print(row)
-         Id_Boisson = row[0]
-         Nom = row[1]
-         Type = row[2]
-         Prix = row[3]
-         Degre = row[4]
-         Quantite = row [5]
-         cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
+    carte_csv= csv.reader(carte_path, delimiter = "\t" )
+    for row in carte_csv:
+        print (row)
+        Id_Boisson = row[0]
+        Nom = row[1]
+        Type = row[2]
+        Prix = row[3]
+        Degre = row[4]
+        Quantite = row [5]
+        cursor.execute("INSERT INTO carte (id_Boisson, nom, type, prix, degre, quantite) VALUES (?, ?, ?, ?, ?, ?)", (Id_Boisson, Nom, Type, Prix, Degre, Quantite))
+
+del_c = "DELETE FROM carte WHERE Nom = 'Nom' "
+cursor.execute(del_c)
 
 with open('/Users/jfoster/Documents/PluriTAL/BDD/Projet/data/employes.csv', 'rt') as employes_path:
     emp_csv = csv.reader(employes_path, delimiter="\t")
