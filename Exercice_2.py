@@ -26,8 +26,18 @@ emp_par_profession = cursor.execute("SELECT profession, COUNT (matricule) FROM e
 res4= cursor.fetchall()
 for item in res4:
     print(item)
-# revenu_groupe = cursor.execute ("SELECT boisson_id FROM ventes JOIN ON id_Boisson FROM carte WHERE boisson_id * prix")
 
+revenu_groupe = cursor.execute (""" SELECT SUM(S) FROM
+                                              (SELECT COUNT(boisson_id) * prix AS S
+                                              FROM ventes, carte
+                                              WHERE ventes.boisson_id = carte.id_Boisson
+                                              GROUP BY boisson_id)
+                                             """)
+
+res5 = cursor.fetchall()
+for item in res5:
+    print(f"Revenu du Groupe = {item}")
+    
 connect.commit()
 
 connect.close()
