@@ -15,12 +15,17 @@ for item in res:
     print(item)
 
 #La date les benefices ont été moins importants
+montant_total_emp = cursor.execute(""" SELECT date, ROUND(S, 6) FROM (SELECT date, boisson_id, SUM(prix) AS S
+                                              FROM ventes, carte
+                                              WHERE ventes.boisson_id = carte.id_Boisson
+                                              GROUP BY date
+                                              ORDER BY S ASC
+                                              LIMIT 1)
+                                             """)
 
-connect.commit()
-
-all = cursor.fetchall()
-for item in all:
-    print (item)
+res2 = cursor.fetchall()
+for item in res2:
+    print(item)
 
 #final commit of all commands and print
 connect.commit()
