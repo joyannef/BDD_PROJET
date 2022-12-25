@@ -7,7 +7,7 @@ cursor = connect.cursor()
 
 #creating the tables for the data
 cursor.execute("""CREATE TABLE carte (id_Boisson INTEGER,
-                                    nom TEXT NOT NULL,
+                                    nom_Boisson TEXT NOT NULL,
                                     type TEXT NOT NULL,
                                     prix REAL NOT NULL,
                                     degre REAL,
