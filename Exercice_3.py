@@ -6,10 +6,11 @@ connect = sqlite3.connect('/Users/jfoster/Documents/PluriTAL/BDD/test/bars.db')
 cursor = connect.cursor()
 
 #no. total de boissons vendues par chaque employé
-vente_emp = cursor.execute("""SELECT prenom, nom, matricule, COUNT (employe_id)
+vente_emp = cursor.execute("""SELECT prenom, nom, matricule, COUNT (employe_id) AS F
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule
-                                        GROUP BY nom""")
+                                        GROUP BY nom
+                                        ORDER BY F DESC""")
 
 resultat = cursor.fetchall()
 for item in resultat:
