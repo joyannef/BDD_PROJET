@@ -21,7 +21,7 @@ for item in droits_utilisateurs:
 for i in a:
     b.append(i[0])
 
-#Pour verifier si les matricules dans b sont bien les matricules des managers
+#Pour verifier que les matricules dans b sont bien celles des managers, on peut exécuter la commande suivante en enlevant le "#"
 # print (b)
 
 #Accès aux ventes effectuées, afficher les boissons les moins vendues et les employés ayant vendu le moins de boissons
@@ -30,7 +30,7 @@ while in_b:
     find_matricule = input("Entrer votre matricule: ")
     if find_matricule in b:
         print ("Vous avez l'accès aux informations suivantes...\n('Nom_du_Bar', 'Prenom', 'Nom', 'Matricule', 'Total_Ventes')\n")
-        if find_matricule == "T80612": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "T80612": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Le Saphir" 
@@ -63,7 +63,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "R25976": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "R25976": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "L'Envers Bodega"
@@ -95,7 +95,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "R81326": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "R81326": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "By Coss Bar"
@@ -127,7 +127,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "Q66872": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "Q66872": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Nu-Bahia"
@@ -159,7 +159,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "Q09012": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "Q09012": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Antirouille"
@@ -191,7 +191,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "O42298": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "O42298": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Comptoir de l'Arc"
@@ -223,7 +223,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "A08113": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "A08113": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Comptoir Saint-Paul"
@@ -255,7 +255,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "Q42796": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "Q42796": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "La Barbote"
@@ -287,7 +287,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "R66525": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "R66525": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Chez Félix"
@@ -319,7 +319,7 @@ while in_b:
             for item in res:
                 print(item)
             break
-        if find_matricule == "W04397": #Attribuer cet imatricule à son établissement respectif
+        if find_matricule == "W04397": #Attribuer ce matricule à son établissement respectif
             vente_emp = cursor.execute("""SELECT nom_bar, prenom, nom, matricule, COUNT (employe_id)
                                         FROM employes, ventes
                                         WHERE ventes.employe_id = employes.matricule AND nom_bar = "Le Sens Six"
