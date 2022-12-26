@@ -46,7 +46,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Saphir"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -60,7 +60,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Saphir"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -82,7 +82,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "L'Envers Bodega" 
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -96,7 +96,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "L'Envers Bodega"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -118,7 +118,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "By Coss Bar" 
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -132,7 +132,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "By Coss Bar"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -153,7 +153,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Nu-Bahia"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -167,7 +167,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Nu-Bahia"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -188,7 +188,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Antirouille"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -202,7 +202,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Antirouille"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -223,7 +223,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir de l'Arc"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -237,7 +237,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir de l'Arc"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -258,7 +258,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir Saint-Paul"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -272,7 +272,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir Saint-Paul"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -293,7 +293,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "La Barbote"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -307,7 +307,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "La Barbote"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -328,7 +328,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Chez Félix"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -342,7 +342,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Chez Félix"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
@@ -363,7 +363,7 @@ while in_b:
 #Afficher les boissons les moins vendues
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, COUNT(boisson_id) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Sens Six"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3
@@ -377,7 +377,7 @@ while in_b:
 #Afficher les boissons qui ont rapporté le moins d'argent
         boissons_vendues = cursor.execute("""SELECT nom_Boisson, boisson_id, S FROM (SELECT nom_Boisson, boisson_id, SUM(prix) AS S
                                               FROM ventes, carte
-                                              WHERE ventes.boisson_id = carte.id_Boisson 
+                                              WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Sens Six"
                                               GROUP BY boisson_id
                                               ORDER BY S ASC
                                               LIMIT 3)
