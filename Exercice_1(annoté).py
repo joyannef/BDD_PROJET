@@ -32,7 +32,7 @@ cursor.execute("""CREATE TABLE etablissements (
                                     manager_id TEXT NOT NULL,
                                     FOREIGN KEY (manager_id) REFERENCES employes (matricule));""")
 
-cursor.execute("""CREATE TABLE ventes (no_vente INTEGER PRIMARY KEY AUTOINCREMENT,
+cursor.execute("""CREATE TABLE ventes (id_vente INTEGER PRIMARY KEY AUTOINCREMENT,
                                     employe_id TEXT,
                                     boisson_id INTEGER, 
                                     date TEXT,
