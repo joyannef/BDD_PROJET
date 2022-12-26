@@ -1,14 +1,7 @@
 import sqlite3
 import csv
 
-#connect to the database
-connect = sqlite3.connect('/Users/jfoster/Documents/PluriTAL/BDD/test/bars.db')
-cursor = connect.cursor()
-
-import sqlite3
-import csv
-
-#connect to the database
+#Connexion à la base de données 
 connect = sqlite3.connect('/Users/jfoster/Documents/PluriTAL/BDD/test/bars.db')
 cursor = connect.cursor()
 
