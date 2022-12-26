@@ -33,7 +33,6 @@ for item in res:
 #                                      ORDER BY employe_id, boisson_id
 #                                              """)
 
-#ESSAYER FAIRE UN UNION DES RESULTATS
 
 connect.commit()
 
