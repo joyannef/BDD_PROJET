@@ -53,3 +53,4 @@ connect.commit()
 
 connect.close()
 
+#Faut copier coller tout de Q 5 et mettre ces resultats en dessous "Vente_emp" dans le boucle pour chaque manager et ajouter le nom du bar dans la ligne WHERE
