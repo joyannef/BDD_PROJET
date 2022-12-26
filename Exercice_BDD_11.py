@@ -32,3 +32,4 @@ connect.commit()
 connect.close()
 
 #il faut changer le nombre en fonction de nombre des ventes pour chaque etablissement
+#Faut copier coller tout de Q 5 et mettre ces resultats en dessous "Vente_emp" dans le boucle pour chaque manager et ajouter le nom du bar dans la ligne WHERE
