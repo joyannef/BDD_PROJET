@@ -44,22 +44,23 @@ while in_b:
                 print(item)
             # Moyen degré d'alcool consommé étant donné tous les boissons vendues
         # Moyen degré d'alcool consommé étant donné tous les boissons vendues
-            d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
+            d_alcool = cursor.execute("""SELECT SUM (F) / 37200 FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Saphir"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
-
         # Moyen quantite d'alcool consommé
-            q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
+            q_alcool = cursor.execute("""SELECT SUM (Q) / 37200 FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Saphir"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -73,20 +74,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "L'Envers Bodega"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "L'Envers Bodega"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -100,20 +103,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "By Coss Bar"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "By Coss Bar"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -127,20 +132,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Nu-Bahia"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Nu-Bahia"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -154,20 +161,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Antirouille"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Antirouille"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -181,20 +190,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir de l'Arc"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir de l'Arc"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -208,20 +219,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir Saint-Paul"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Comptoir Saint-Paul"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -235,20 +248,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "La Barbote"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "La Barbote"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -262,20 +277,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM  (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Chez Félix"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Chez Félix"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
@@ -289,20 +306,22 @@ while in_b:
                 print(item)
             d_alcool = cursor.execute("""SELECT SUM (F) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * degre AS F
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Sens Six"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen degré d'alcool consommé: ")
             for item in res:
                 print(item)
 
         # Moyen quantite d'alcool consommé
             q_alcool = cursor.execute("""SELECT SUM (Q) / COUNT(boisson_id) FROM (SELECT quantite, nom_Boisson, boisson_id, COUNT(boisson_id) * quantite AS Q
                                                         FROM ventes, carte
-                                                        WHERE ventes.boisson_id = carte.id_Boisson AND nom_bar = "Le Sens Six"
+                                                        WHERE ventes.boisson_id = carte.id_Boisson 
                                                         GROUP BY nom_Boisson)
                                                         """)
             res = cursor.fetchall()
+            print("\nMoyen quantité d'alcool consommé: ")
             for item in res:
                 print(item)
             break
